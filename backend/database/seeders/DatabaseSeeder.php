@@ -39,5 +39,7 @@ class DatabaseSeeder extends Seeder
             ['nama' => 'Mesin Bubut 1'],
             ['tipe' => 'Bubut', 'lokasi' => 'Workshop']
         );
+
+        $this->call(KomponenSeeder::class);
     }
 }
