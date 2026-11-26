@@ -142,8 +142,8 @@
 		<div class="card border-0 shadow-sm rounded-3 h-100 mb-0">
 			<div class="card-body">
 				<small class="text-muted d-block">Status operasional</small>
-				<h3 class="fw-bold text-success my-2">Aktif</h3>
-				<small class="text-muted">Berputar stabil</small>
+				<h3 id="val-status" class="fw-bold text-success my-2">Aktif</h3>
+				<small id="sub-status" class="text-muted">Berputar stabil</small>
 			</div>
 		</div>
 	</div>
@@ -152,8 +152,8 @@
 		<div class="card border-0 shadow-sm rounded-3 h-100 mb-0">
 			<div class="card-body">
 				<small class="text-muted d-block">Suhu mesin</small>
-				<h3 class="fw-bold text-primary my-2">42,5 °C</h3>
-				<small class="text-muted">Termokopel • Normal</small>
+				<h3 id="val-suhu" class="fw-bold text-primary my-2">42,5 °C</h3>
+				<small id="sub-suhu" class="text-muted">Termokopel • Normal</small>
 			</div>
 		</div>
 	</div>
@@ -162,8 +162,8 @@
 		<div class="card border-0 shadow-sm rounded-3 h-100 mb-0">
 			<div class="card-body">
 				<small class="text-muted d-block">Kecepatan sudut</small>
-				<h3 class="fw-bold text-primary my-2">120 °/s</h3>
-				<small class="text-muted">Giroskop • Stabil</small>
+				<h3 id="val-kecepatan" class="fw-bold text-primary my-2">120 °/s</h3>
+				<small id="sub-kecepatan" class="text-muted">Giroskop • Stabil</small>
 			</div>
 		</div>
 	</div>
@@ -172,8 +172,8 @@
 		<div class="card border-0 shadow-sm rounded-3 h-100 mb-0">
 			<div class="card-body">
 				<small class="text-muted d-block">Sinyal suara relatif</small>
-				<h3 class="fw-bold text-primary my-2">1.850 ADC</h3>
-				<small class="text-muted">GY-MAX4466</small>
+				<h3 id="val-suara" class="fw-bold text-primary my-2">1.850 ADC</h3>
+				<small id="sub-suara" class="text-muted">GY-MAX4466</small>
 			</div>
 		</div>
 	</div>
@@ -182,8 +182,8 @@
 		<div class="card border-0 shadow-sm rounded-3 h-100 mb-0">
 			<div class="card-body">
 				<small class="text-muted d-block">Estimasi jam operasi</small>
-				<h3 class="fw-bold text-dark my-2">37,5 jam</h3>
-				<small class="text-muted">Berdasarkan aktivitas</small>
+				<h3 id="val-jam-operasi" class="fw-bold text-dark my-2">37,5 jam</h3>
+				<small id="sub-jam-operasi" class="text-muted">Berdasarkan aktivitas</small>
 			</div>
 		</div>
 	</div>
@@ -192,8 +192,8 @@
 		<div class="card border-0 shadow-sm rounded-3 h-100 mb-0">
 			<div class="card-body">
 				<small class="text-muted d-block">Analisis AI</small>
-				<h3 class="fw-bold text-success my-2">Normal</h3>
-				<small class="text-muted">Tidak ada pola anomali</small>
+				<h3 id="val-ai" class="fw-bold text-success my-2">Normal</h3>
+				<small id="sub-ai" class="text-muted">Tidak ada pola anomali</small>
 			</div>
 		</div>
 	</div>
@@ -204,14 +204,14 @@
 	<div class="card-body">
 		<div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
 			<div>
-				<h5 class="fw-bold text-dark mb-0">Tren sensor • Mesin Bubut 01 • 1 jam</h5>
-				<small class="text-muted">Satuan sensor ditampilkan terpisah</small>
+				<h5 id="judul-tren-sensor" class="fw-bold text-dark mb-0">Tren sensor • Mesin Bubut 01 • 1 jam</h5>
+				<small id="sub-tren-sensor" class="text-muted">Satuan sensor ditampilkan terpisah</small>
 			</div>
-			<div class="btn-group btn-group-sm" role="group">
-				<button type="button" class="btn btn-primary">1 jam</button>
-				<button type="button" class="btn btn-light">24 jam</button>
-				<button type="button" class="btn btn-light">7 hari</button>
-				<button type="button" class="btn btn-light">30 hari</button>
+			<div id="filter-rentang-tren" class="btn-group btn-group-sm" role="group">
+				<button type="button" id="btn-rentang-1j" data-rentang="1h" class="btn btn-primary">1 jam</button>
+				<button type="button" id="btn-rentang-24j" data-rentang="24h" class="btn btn-light">24 jam</button>
+				<button type="button" id="btn-rentang-7h" data-rentang="7d" class="btn btn-light">7 hari</button>
+				<button type="button" id="btn-rentang-30h" data-rentang="30d" class="btn btn-light">30 hari</button>
 			</div>
 		</div>
 
@@ -219,7 +219,7 @@
 			<div class="col-md-4">
 				<div class="d-flex justify-content-between mb-2">
 					<small class="text-muted fw-semibold">Suhu (°C)</small>
-					<small class="text-primary fw-bold">42,5</small>
+					<small id="tren-val-suhu" class="text-primary fw-bold">42,5</small>
 				</div>
 				<div style="height: 160px;">
 					<canvas id="chartSuhu"></canvas>
@@ -229,7 +229,7 @@
 			<div class="col-md-4">
 				<div class="d-flex justify-content-between mb-2">
 					<small class="text-muted fw-semibold">Kecepatan sudut (°/s)</small>
-					<small class="text-success fw-bold">120</small>
+					<small id="tren-val-kecepatan" class="text-success fw-bold">120</small>
 				</div>
 				<div style="height: 160px;">
 					<canvas id="chartKecepatan"></canvas>
@@ -239,7 +239,7 @@
 			<div class="col-md-4">
 				<div class="d-flex justify-content-between mb-2">
 					<small class="text-muted fw-semibold">Amplitudo suara (ADC)</small>
-					<small class="fw-bold" style="color: #7C3AED;">1.850</small>
+					<small id="tren-val-suara" class="fw-bold" style="color: #7C3AED;">1.850</small>
 				</div>
 				<div style="height: 160px;">
 					<canvas id="chartSuara"></canvas>
@@ -250,6 +250,7 @@
 </div>
 @endsection
 
+@push('scripts')
 @push('scripts')
 <script>
 	document.addEventListener("DOMContentLoaded", function() {
@@ -265,32 +266,107 @@
 			}
 		};
 
-		new Chart(document.getElementById('chartSuhu'), {
+		const chartSuhu = new Chart(document.getElementById('chartSuhu'), {
 			type: 'line',
 			data: {
-				labels: labels,
+				labels: [...labels],
 				datasets: [{ data: [34, 35.5, 35, 37, 36.2, 38.5, 37.8, 39.2, 41, 40.5, 42.5], borderColor: '#1D63ED' }]
 			},
 			options: commonOptions
 		});
 
-		new Chart(document.getElementById('chartKecepatan'), {
+		const chartKecepatan = new Chart(document.getElementById('chartKecepatan'), {
 			type: 'line',
 			data: {
-				labels: labels,
-				datasets: [{ data: [105, 112, 115, 114, 118, 117, 121, 119, 120, 119, 120], borderColor: '#10B981' }]
+				labels: [...labels],
+				datasets: [{ data: [0.12, 0.15, 0.18, 0.25, 0.30, 0.28, 0.35, 0.32, 0.40, 0.38, 0.36], borderColor: '#10B981' }]
 			},
 			options: commonOptions
 		});
 
-		new Chart(document.getElementById('chartSuara'), {
+		const chartSuara = new Chart(document.getElementById('chartSuara'), {
 			type: 'line',
 			data: {
-				labels: labels,
+				labels: [...labels],
 				datasets: [{ data: [1400, 1750, 1300, 2100, 1500, 1200, 1800, 1450, 1650, 1900, 1850], borderColor: '#7C3AED' }]
 			},
 			options: commonOptions
 		});
+
+		const mesinId = {{ $mesin->id ?? 1 }};
+		let lastDataId = null;
+
+		const setText = (id, text) => {
+			const el = document.getElementById(id);
+			if (el) el.innerText = text;
+		};
+
+		function updateGrafik(chart, newLabel, newValue) {
+			chart.data.labels.push(newLabel);
+			chart.data.datasets[0].data.push(newValue);
+
+			if (chart.data.labels.length > 11) {
+				chart.data.labels.shift();
+				chart.data.datasets[0].data.shift();
+			}
+			chart.update('none');
+		}
+
+		function fetchSensorTerbaru() {
+			fetch(`/api/sensor/terkini/${mesinId}`, {
+				headers: { 'Accept': 'application/json' }
+			})
+				.then(response => {
+					if (!response.ok) throw new Error(`HTTP ${response.status}`);
+					return response.json();
+				})
+				.then(res => {
+					const d = res.data;
+					const r = res.rekap || {};
+					if (!d) return;
+
+					const status = (d.status || 'off').toLowerCase();
+					const statusLabel = status === 'active' ? 'Aktif' : (status === 'idle' ? 'Idle' : 'Off');
+					const suhu = parseFloat(d.suhu ?? 0);
+					const getaran = parseFloat(d.getaran_rms ?? 0);
+					const suara = parseFloat(d.suara ?? 0);
+					const totalJam = parseFloat(r.total_berbobot ?? res.mesin?.total_jam_berbobot ?? 0);
+					const harianJam = parseFloat(r.harian_berbobot ?? 0);
+					const mingguanJam = parseFloat(r.mingguan_berbobot ?? 0);
+
+					// Update kartu & badge (aman walau elemen opsional tidak ada)
+					setText('badge-status', `● ${statusLabel}`);
+					setText('waktu-update', 'Live • Baru saja');
+					setText('val-status', statusLabel);
+					setText('sub-status', d.beban ? `Beban ${d.beban} (${d.bobot}x)` : 'Tidak ada pembebanan');
+					setText('val-beban', d.beban ? `Beban: ${d.beban} (${d.bobot}x)` : 'Beban: -');
+
+					setText('val-suhu', `${suhu.toFixed(1).replace('.', ',')} °C`);
+					setText('val-kecepatan', `${getaran.toFixed(3)} g`);
+					setText('val-suara', `${Math.round(suara).toLocaleString('id-ID')} ADC`);
+
+					setText('tren-val-suhu', suhu.toFixed(1).replace('.', ','));
+					setText('tren-val-kecepatan', getaran.toFixed(3));
+					setText('tren-val-suara', Math.round(suara).toLocaleString('id-ID'));
+
+					// Rekap jam kerja berbobot
+					setText('val-jam-operasi', `${totalJam.toFixed(2).replace('.', ',')} jam`);
+					setText('sub-jam-operasi', `Hari ini: ${harianJam.toFixed(2)}j • Minggu: ${mingguanJam.toFixed(2)}j`);
+
+					// Dorong titik baru ke grafik hanya jika ada data sensor baru
+					if (d.id !== lastDataId) {
+						lastDataId = d.id;
+						const jamMenit = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+						updateGrafik(chartSuhu, jamMenit, suhu);
+						updateGrafik(chartKecepatan, jamMenit, getaran);
+						updateGrafik(chartSuara, jamMenit, suara);
+					}
+				})
+				.catch(err => console.error('Error fetch sensor:', err));
+		}
+
+		fetchSensorTerbaru();
+		setInterval(fetchSensorTerbaru, 3000);
 	});
 </script>
 @endpush
