@@ -2,44 +2,32 @@
 
 namespace Database\Seeders;
 
-use App\Models\Mesin;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
+        // 1. Akun Utama Owner (Jaenal Arafat)
         User::updateOrCreate(
-            ['email' => 'owner@latheguard.test'],
+            ['email' => 'jaenal@gmail.com'],
             [
-                'name' => 'Owner',
-                'password' => Hash::make('password123'),
-                'role' => 'owner',
+                'name'     => 'Jaenal',
+                'password' => Hash::make('123456'),
+                'role'     => 'owner',
             ]
         );
 
+        // 2. Akun Contoh Teknisi (untuk uji pembatasan hak akses RBAC)
         User::updateOrCreate(
-            ['email' => 'teknisi@latheguard.test'],
+            ['email' => 'teknisi@latheguard.com'],
             [
-                'name' => 'Teknisi',
-                'password' => Hash::make('password123'),
-                'role' => 'teknisi',
+                'name'     => 'Teknisi Workshop',
+                'password' => Hash::make('123456'),
+                'role'     => 'teknisi',
             ]
         );
-
-        Mesin::firstOrCreate(
-            ['nama' => 'Mesin Bubut 1'],
-            ['tipe' => 'Bubut', 'lokasi' => 'Workshop']
-        );
-
-        $this->call(KomponenSeeder::class);
     }
 }
